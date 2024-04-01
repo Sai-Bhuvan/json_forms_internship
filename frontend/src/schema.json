@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "mothername": {
+      "type": "string",
+      "minLength": 4
+    },
+    "slider": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 1,
+      "description": "Slider Example"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "title": "Long Description",
+      "type": "string"
+    },
+    "done": {
+      "type": "boolean"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "rating": {
+      "type": "integer",
+      "maximum": 5
+    },
+    "recurrence": {
+      "type": "string",
+      "enum": ["Never", "Daily", "Weekly", "Monthly"]
+    },
+    "recurrence_interval": {
+      "type": "integer"
+    },
+    "oneOfEnum": {
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "foo",
+          "title": "Foo"
+        },
+        {
+          "const": "bar",
+          "title": "Bar"
+        },
+        {
+          "const": "foobar",
+          "title": "FooBar"
+        }
+      ]
+    },
+    "radioGroup": {
+      "type": "string",
+      "enum": ["foo", "bar", "foobar"]
+    }
+  },
+  "required": ["name", "due_date", "mothername"]
+}
